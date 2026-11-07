@@ -99,13 +99,13 @@ public class Main {
         NotificationSender email = new EmailSender();
         NotificationSender sms = new SmsAdapter(new ThirdPartySmsApi());
 
-        String message = "Заказ №" + order.getId() + " оплачен, сумма " + finalPrice + " ₽";
+        String message = "Заказ №" + order.getId() + " оплачен, сумма " + finalPrice + "₽";
         email.send(order.getEmail(), message);
         sms.send(order.getPhone(), message);
 
 
     }
     private static void print(OrderPrice price) {
-        System.out.println(price.getDescription() + " = " + price.getPrice() + " руб.");
+        System.out.println(price.getDescription() + " = " + price.getPrice() + "₽");
     }
 }
